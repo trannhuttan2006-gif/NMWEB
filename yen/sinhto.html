@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet"href="sinhto.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <p class="hotline">Hotline 0918 582 488</p>
+            <p class="brand-text">Thương hiệu trái cây nhập khẩu uy tín chất lượng</p>
+            <div class="auth-links">
+                <a href="dangnhap.html">Đăng nhập</a>
+                <span>|</span>
+                <a href="dangky.html">Đăng ký</a>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <button class="menu-toggle" type="button" aria-label="Mở menu" title="Mở menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <a class="logo" href="trangchu.html">
+                <img src="image.png" alt="Logo F5 Fruit Shop">
+            </a>
+
+            <nav class="main-nav" aria-label="Điều hướng chính">
+                <a href="trangchu.html">Trang chủ</a>
+                <a href="sinhto.html">Sinh tố</a>
+                <a href="thucpham.html">Thực phẩm</a>
+                <a href="traicaynhap.html">Trái cây nhập</a>
+                <a href="nuocep.html">Nước ép</a>
+            </nav>
+
+            <div class="header-actions" aria-label="Công cụ">
+                <input class="search-input" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+                <button class="search-toggle" type="button" aria-label="Tìm kiếm" title="Tìm kiếm" aria-expanded="false">
+                    <span aria-hidden="true">&#128269;</span>
+                </button>
+                <a class="action-link" href="giohang.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+                    <span aria-hidden="true">&#128722;</span>
+                </a>
+                <a class="action-link" href="yeuthich.html" aria-label="Yêu thích" title="Yêu thích">
+                    <span aria-hidden="true">&#9825;</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+
+   <main class="page-content">
+    <div class="swap-banner">
+    <img src="bannersinhto2.png"
+         class="bannerphoto"alt="Banner 1"><img src="bannersinhto1.png"
+         class="bannerphoto2"alt="Banner 2">
+</div>
+    <section class="breadcrumb">
+        <a href="trangchu.html">Trang chủ</a>
+        <span>></span>
+        <span>Sinh tố</span>
+    </section>
+    <section class="juice-title">
+        <h1>SINH TỐ TRÁI CÂY</h1>
+    </section>
+    <section class="sort-bar">
+        <div class="product-count">
+            Hiển thị 6 sản phẩm
+        </div>
+        <div class="sort-box">
+    <label for="sortProduct">Sắp xếp:</label>
+    <select id="sortProduct" onchange="sortProducts()">
+        <option value="default">Mặc định</option>
+        <option value="low">Giá tăng dần</option>
+        <option value="high">Giá giảm dần</option>
+        <option value="az">Tên A-Z</option>
+        <option value="za">Tên Z-A</option>
+    </select>
+</div>
+    </section>
+    <section class="product-list" id="productList">
+        <div class="product-card">
+            <img src="bo.png" alt="Sinh tố bơ">
+            <h3>Sinh tố bơ</h3>
+            <p class="price">48.000đ</p>
+            <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+        <div class="product-card">
+            <img src="xoai.png">
+            <h3>Sinh tố xoài</h3>
+            <p class="price">45.000đ</p>
+               <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+        <div class="product-card">
+            <img src="dudu.png">
+            <h3>Sinh tố đu đủ</h3>
+            <p class="price">42.000đ</p>
+              <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+        <div class="product-card">
+            <img src="chuoi.png">
+            <h3>Sinh tố chuối</h3>
+            <p class="price">40.000đ</p>
+              <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+        <div class="product-card">
+            <img src="dau.png">
+            <h3>Sinh tố dâu</h3>
+            <p class="price">50.000đ</p>
+               <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+        <div class="product-card">
+           <img src="mangcau.png">
+            <h3>Sinh tố mãng cầu</h3>
+            <p class="price">45.000đ</p>
+             <button class="buy-btn">
+    <span class="cart-icon">🛍</span>
+    <span>CHỌN MUA</span>
+</button>
+        </div>
+    </section>
+</main>
+
+
+ <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Giới thiệu</h3>
+                <p>F5 Fruit Shop là thương hiệu nhập khẩu trái cây uy tín hàng đầu Việt Nam với hơn 11 năm trên thị trường.</p>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#128205;</span>
+                    Số 2 Cổ Linh, Long Biên, Hà Nội
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Liên kết</h3>
+                <nav class="footer-links" aria-label="Liên kết footer">
+                    <a href="trangchu.html">Trang chủ</a>
+                    <a href="sinhto.html">Sinh tố</a>
+                    <a href="thucpham.html">Thực phẩm</a>
+                    <a href="traicaynhap.html">Trái cây nhập</a>
+                    <a href="nuocep.html">Nước ép</a>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Chăm sóc khách hàng</h3>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#9742;</span>
+                    091 858 24 88
+                </p>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#9993;</span>
+                    f5fruitshopcop@gmail.com
+                </p>
+                <div class="social-block">
+                    <h4>Mạng xã hội</h4>
+                    <div class="social-icons" aria-label="Mạng xã hội">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Zalo">Z</a>
+                        <a href="#" aria-label="YouTube">&#9654;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <img src="image.png" alt="Logo F5 Fruit Shop">
+            <p>© Copyright 2026 By Nhom 8. Powered by Nhom 8</p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
