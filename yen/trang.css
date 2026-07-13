@@ -1,0 +1,173 @@
+
+.juice-banner{
+   width:90%;
+    max-width:1100px;
+    margin:25px auto;
+}
+
+.juice-banner img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+.swap-banner{
+    width:90%;
+    max-width:1200px;
+    height:350px;
+    margin:20px auto;
+    position:relative;
+    overflow:hidden;
+    border:2px solid #000;
+}
+
+.bannerphoto,
+.bannerphoto2{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:opacity .5s;
+}
+
+.bannerphoto{
+    opacity:1;
+    z-index:2;
+}
+
+.bannerphoto2{
+    opacity:0;
+    z-index:1;
+}
+
+.swap-banner:hover .bannerphoto{
+    opacity:0;
+}
+
+.swap-banner:hover .bannerphoto2{
+    opacity:1;
+}
+.breadcrumb{
+    border:2px solid #000;
+    padding:12px;
+    margin-bottom:20px;
+}
+
+.breadcrumb a{
+    text-decoration:none;
+    color:#2f8f46;
+}
+
+.juice-title{
+    width:100%;
+    max-width:1200px;
+    margin:30px auto;
+    background:#2d6a27;
+    border:2px solid #256a41;
+    border-radius:50px;
+    padding:14px 0;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+.juice-title h1{
+    margin:0;
+    color:#ffffff;
+    font-size:32px;
+    font-weight:700;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+    line-height:1.2;
+}
+
+.sort-bar{
+    border:2px solid #000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    margin-bottom:25px;
+}
+
+.sort-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.sort-box select{
+    width:180px;
+    height:35px;
+}
+
+.product-list{
+    border:2px solid #000;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product-card{
+    border:1px solid #ddd;
+    padding:15px;
+    background:#fff;
+    transition:0.3s;
+}
+
+.product-card:hover{
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    border:1px solid #ddd;
+}
+
+.product-card h3{
+    margin-top:15px;
+}
+
+.price{
+    color:red;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.product-card button{
+    width:100%;
+    height:45px;
+    margin-top:10px;
+    border:2px solid black;
+    background:#53a716;
+    color:white;
+    cursor:pointer;
+}
+
+.product-card button:hover{
+    background:#2f8f46;
+}
+
+@media(max-width:1000px){
+
+.product-list{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.sort-bar{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+}
