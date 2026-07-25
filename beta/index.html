@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <p class="hotline">Hotline 0918 582 488</p>
+            <p class="brand-text">Thương hiệu trái cây nhập khẩu uy tín chất lượng</p>
+            <div class="opening-hours" aria-label="Giờ mở cửa: 6 giờ đến 22 giờ">
+                <i class="fa-solid fa-clock"></i>
+                <span>6:00 - 22:00</span>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <button class="menu-toggle" type="button" aria-label="Mở menu" title="Mở menu" aria-expanded="false" aria-controls="main-navigation">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <a class="logo" href="/index.html">
+                <img src="/image/logo.png" alt="Logo F5 Fruit Shop">
+            </a>
+
+            <nav class="main-nav" id="main-navigation" aria-label="Điều hướng chính">
+                <a href="/index.html">Trang chủ</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="product-menu">
+                        Sản phẩm <span aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="nav-dropdown-menu" id="product-menu">
+                        <a href="/yen/sinhto.html">Sinh tố</a>
+                        <a href="/yen/nuocep.html">Nước ép</a>
+                        <a href="/yen/thucpham.html">Thực phẩm</a>
+                        <a href="/yen/traicaynhap.html">Trái cây nhập</a>
+                    </div>
+                </div>
+                <a href="/loi/gioithieu.html">Giới thiệu</a>
+                <a href="/loi/lienhe.html">Liên hệ</a>
+            </nav>
+
+            <div class="header-actions" aria-label="Công cụ">
+                <input class="search-input" type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+                <button class="search-toggle" type="button" aria-label="Tìm kiếm" title="Tìm kiếm" aria-expanded="false">
+                    <i class="fa-solid fa-magnifying-glass header-icon" aria-hidden="true"></i>
+                </button>
+                <a class="action-link" href="/thinh/cart.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+                    <i class="fa-solid fa-cart-arrow-down header-icon"></i>
+                </a>
+                <a class="action-link" href="dangnhap.html" aria-label="Đăng nhập" title="Đăng nhập">
+                    <i class="fa-solid fa-circle-user header-icon"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ĐÃ CẬP NHẬT: Thêm main-container chứa Banner và Nội dung trang -->
+    <main class="main-container">
+        
+        <!-- Khu vực Banner Slider (Tràn viền 100%) -->
+        <section class="home-banner" aria-label="Banner Quảng Cáo">
+            <div class="banner-track">
+                <!-- Banner 1 -->
+                <div class="banner-slide">
+                    <img src="/image/banner (1).png" alt="Trái cây nhập khẩu tươi ngon">
+                </div>
+                <!-- Banner 2 -->
+                <div class="banner-slide">
+                    <img src="/image/banner (2).png" alt="Khuyến mãi nước ép và sinh tố">
+                </div>
+                <!-- Banner 3 -->
+                <div class="banner-slide">
+                    <img src="/image/banner (3).png" alt="Sản phẩm sạch vì sức khỏe">
+                </div>
+            </div>
+            
+            <!-- Nút điều hướng -->
+            <button class="banner-btn prev-btn" aria-label="Quay lại">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="banner-btn next-btn" aria-label="Tiếp theo">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </section>
+        
+        <!-- KHU VỰC 4 ẢNH FULL WIDTH (MỚI THÊM) -->
+        <section class="feature-images" aria-label="Hình ảnh nổi bật">
+            <a href="/nuocep.html" class="feature-item">
+                <img src="/image/feature1.jpg" alt="Mục nổi bật 1">
+            </a>
+            <a href="/sinhto.html" class="feature-item">
+                <img src="/image/feature1.jpg" alt="Mục nổi bật 2">
+            </a>
+            <a href="/thucpham.html" class="feature-item">
+                <img src="/image/feature1.jpg" alt="Mục nổi bật 3">
+            </a>
+            <a href="/traicaynhap.html" class="feature-item">
+                <img src="/image/feature1.jpg" alt="Mục nổi bật 4">
+            </a>
+        </section>
+        
+        <!-- THANH CAM KẾT (CHỮ CHẠY NGANG) -->
+        <section class="policy-bar" aria-label="Cam kết dịch vụ">
+            <div class="policy-track">
+                <!-- Nhóm 1 -->
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Đổi trả trong vòng 72h</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Thanh toán linh hoạt, dễ dàng</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Tư vấn miễn phí 24/7</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Giao hàng nhanh</span>
+                
+                <!-- Nhóm 2: Copy y hệt nhóm 1 để tạo hiệu ứng vòng lặp trượt không bao giờ đứt quãng -->
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Đổi trả trong vòng 72h</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Thanh toán linh hoạt, dễ dàng</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Tư vấn miễn phí 24/7</span>
+                <span class="policy-item"><i class="fa-solid fa-check"></i> Giao hàng nhanh</span>
+            </div>
+        </section>
+
+        <!-- Khu vực Nội dung chính -->
+        <div class="page-content">
+                <!-- PHẦN 1: SẢN PHẨM NỔI BẬT -->
+            <section class="featured-section">
+                <h2 class="section-title">Sản phẩm nổi bật</h2>
+                
+                <div class="product-slider-wrapper">
+                    <!-- Danh sách 8 sản phẩm (Track trượt) -->
+                    <div class="product-track" id="featured-track">
+                        
+                        <!-- Mẫu Sản phẩm 1 -->
+                        <div class="product-card">
+                            <img src="/image/product1.png" alt="Sản phẩm 1" class="product-image-only">
+                            <!-- Lớp phủ thông tin (Bị ẩn, rê chuột mới hiện) -->
+                            <div class="product-info">
+                                <h3 class="product-name">Táo Fuji Nhập Khẩu</h3>
+                                <p class="product-price">120.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 2 -->
+                        <div class="product-card">
+                            <img src="/image/product2.png" alt="Sản phẩm 2" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Nho Mẫu Đơn Hàn Quốc</h3>
+                                <p class="product-price">850.000đ / chùm</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 3 -->
+                        <div class="product-card">
+                            <img src="/image/product3.png" alt="Sản phẩm 3" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Kiwi Vàng New Zealand</h3>
+                                <p class="product-price">180.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 4 -->
+                        <div class="product-card">
+                            <img src="/image/product1.png" alt="Sản phẩm 4" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Cam Vàng Navel Úc</h3>
+                                <p class="product-price">95.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 5 -->
+                        <div class="product-card">
+                            <img src="/image/product2.png" alt="Sản phẩm 5" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Dưa Lưới Ichiba Nhật Bản</h3>
+                                <p class="product-price">320.000đ / trái</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 6 -->
+                        <div class="product-card">
+                            <img src="/image/product3.png" alt="Sản phẩm 6" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Cherry Đỏ Mỹ Size To</h3>
+                                <p class="product-price">450.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 7 -->
+                        <div class="product-card">
+                            <img src="/image/product1.png" alt="Sản phẩm 7" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Lựu Đỏ Peru Trái Lớn</h3>
+                                <p class="product-price">210.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 8 -->
+                        <div class="product-card">
+                            <img src="/image/product2.png" alt="Sản phẩm 8" class="product-image-only">
+                            <div class="product-info">
+                                <h3 class="product-name">Lê Hàn Quốc Thượng Hạng</h3>
+                                <p class="product-price">160.000đ / kg</p>
+                                <button class="add-to-cart-btn">Mua ngay</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Dấu chấm đánh dấu trang (Dots) -->
+                <div class="slider-dots" id="featured-dots">
+                    <!-- Sẽ được JS tạo tự động tùy thuộc kích thước màn hình -->
+                </div>
+            </section>
+
+            <!-- PHẦN 2: BEST SELLER -->
+            <section class="bestseller-section" style="margin-top: 60px;">
+                
+                <!-- Banner giữa trang (Nhỏ hơn banner chính, bo góc nhẹ) -->
+                <div class="sub-banner">
+                    <img src="/image/banner4.webp" alt="Banner Khuyến Mãi">
+                </div>
+
+                <h2 class="section-title">Best Seller</h2>
+                
+                <div class="product-slider-wrapper">
+                    <div class="product-track" id="bestseller-track">
+                        
+                        <!-- Mẫu Sản phẩm 1 (Hiện đầy đủ thông tin) -->
+                        <div class="product-card-static">
+                            <div class="product-image">
+                                <img src="/image/product1.png" alt="Best Seller 1">
+                            </div>
+                            <h3 class="product-name">Táo Envy Mỹ Size Lớn</h3>
+                            <p class="product-price">199.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 2 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product2.png" alt="Best Seller 2"></div>
+                            <h3 class="product-name">Dâu Tây Mộc Châu</h3>
+                            <p class="product-price">250.000đ / hộp</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 3 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product3.png" alt="Best Seller 3"></div>
+                            <h3 class="product-name">Quýt Úc Vị Ngọt</h3>
+                            <p class="product-price">140.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 4 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product1.png" alt="Best Seller 4"></div>
+                            <h3 class="product-name">Dưa Hấu Không Hạt</h3>
+                            <p class="product-price">35.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 5 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product2.png" alt="Best Seller 5"></div>
+                            <h3 class="product-name">Nho Đen Không Hạt Mỹ</h3>
+                            <p class="product-price">220.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 6 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product3.png" alt="Best Seller 6"></div>
+                            <h3 class="product-name">Bưởi Da Xanh Ruột Hồng</h3>
+                            <p class="product-price">85.000đ / trái</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 7 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product1.png" alt="Best Seller 7"></div>
+                            <h3 class="product-name">Sầu Riêng Ri6</h3>
+                            <p class="product-price">130.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- Mẫu Sản phẩm 8 -->
+                        <div class="product-card-static">
+                            <div class="product-image"><img src="/image/product2.png" alt="Best Seller 8"></div>
+                            <h3 class="product-name">Mãng Cầu Xiêm Trái To</h3>
+                            <p class="product-price">65.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Dấu chấm đánh dấu trang -->
+                <div class="slider-dots" id="bestseller-dots"></div>
+                
+                <!-- PHẦN 3: CÁC SẢN PHẨM CỦA F5 FRUIT SHOP -->
+            <section class="all-products-section" style="margin-top: 60px;">
+                <h2 class="section-title">Các sản phẩm của F5 Fruit Shop</h2>
+                
+                <!-- Thanh điều hướng Tab (Filter) -->
+                <div class="product-tabs">
+                    <!-- Thêm nút "Tất cả" để khách dễ xem lại toàn bộ -->
+                     <button class="tab-btn active" data-filter="all">Tất cả</button>
+                    <button class="tab-btn" data-filter="sale">Sale</button>
+                    <button class="tab-btn" data-filter="nuoc-ep">Nước ép</button>
+                    <button class="tab-btn" data-filter="sinh-to">Sinh tố</button>
+                    <button class="tab-btn" data-filter="thuc-pham">Thực phẩm</button>
+                    <button class="tab-btn" data-filter="trai-cay">Trái cây nhập</button>
+                </div>
+
+                <!-- Bố cục 2 cột chính -->
+                <div class="all-products-layout">
+                    
+                    <!-- Cột Trái: 2 Ảnh Quảng Cáo Dọc (Giữ nguyên) -->
+                    <div class="left-ads">
+                        <a href="#" class="ad-banner-vertical">
+                            <img src="/image/1-01.png.webp" alt="Quảng cáo 1">
+                        </a>
+                        <a href="#" class="ad-banner-vertical">
+                            <img src="/image/20240823-133320.jpg.webp" alt="Quảng cáo 2">
+                        </a>
+                    </div>
+
+                    <!-- Cột Phải: Lưới Sản phẩm -->
+                    <div class="right-product-grid" id="filterable-product-grid">
+                        
+                        <!-- SP 1: Vừa là Trái cây, vừa đang Sale -->
+                        <div class="product-card-static trai-cay sale">
+                            <div class="product-image"><img src="/image/product1.png" alt="SP 1"></div>
+                            <h3 class="product-name">Cam Sành Vĩnh Long</h3>
+                            <p class="product-price">35.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+                        
+                        <!-- SP 2: Chỉ là Trái cây -->
+                        <div class="product-card-static trai-cay">
+                            <div class="product-image"><img src="/image/product2.png" alt="SP 2"></div>
+                            <h3 class="product-name">Bơ Sáp Đắk Lắk</h3>
+                            <p class="product-price">60.000đ / kg</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 3: Sinh tố -->
+                        <div class="product-card-static sinh-to">
+                            <div class="product-image"><img src="/image/product3.png" alt="SP 3"></div>
+                            <h3 class="product-name">Sinh Tố Xoài Dâu</h3>
+                            <p class="product-price">45.000đ / ly</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 4: Nước ép -->
+                        <div class="product-card-static nuoc-ep sale">
+                            <div class="product-image"><img src="/image/product1.png" alt="SP 4"></div>
+                            <h3 class="product-name">Nước Ép Cần Tây</h3>
+                            <p class="product-price">40.000đ / chai</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 5: Thực phẩm -->
+                        <div class="product-card-static thuc-pham">
+                            <div class="product-image"><img src="/image/product2.png" alt="SP 5"></div>
+                            <h3 class="product-name">Hạt Điều Rang Muối</h3>
+                            <p class="product-price">180.000đ / hũ</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 6: Thực phẩm -->
+                        <div class="product-card-static thuc-pham">
+                            <div class="product-image"><img src="/image/product3.png" alt="SP 6"></div>
+                            <h3 class="product-name">Hạt Macca Úc Nứt Vỏ</h3>
+                            <p class="product-price">250.000đ / hũ</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 7: Thực phẩm & Sale -->
+                        <div class="product-card-static thuc-pham sale">
+                            <div class="product-image"><img src="/image/product1.png" alt="SP 7"></div>
+                            <h3 class="product-name">Trái Cây Sấy Thập Cẩm</h3>
+                            <p class="product-price">110.000đ / gói</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <!-- SP 8: Trái cây & Sale -->
+                        <div class="product-card-static trai-cay sale">
+                            <div class="product-image"><img src="/image/product2.png" alt="SP 8"></div>
+                            <h3 class="product-name">Táo Rockit New Zealand</h3>
+                            <p class="product-price">145.000đ / ống</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <div class="product-card-static sinh-to sale">
+                            <div class="product-image"><img src="/image/product2.png" alt="SP 8"></div>
+                            <h3 class="product-name">Táo Rockit New Zealand</h3>
+                            <p class="product-price">145.000đ / ống</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                        <div class="product-card-static sinh-to sale">
+                            <div class="product-image"><img src="/image/product1.png" alt="SP 8"></div>
+                            <h3 class="product-name">Táo Rockit New Zealand</h3>
+                            <p class="product-price">145.000đ / ống</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+                        
+                        <div class="product-card-static nuoc-ep">
+                            <div class="product-image"><img src="/image/product2.png" alt="SP 4"></div>
+                            <h3 class="product-name">Nước Ép Cần Tây</h3>
+                            <p class="product-price">40.000đ / chai</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+                        
+                        <div class="product-card-static nuoc-ep sale">
+                            <div class="product-image"><img src="/image/product3.png" alt="SP 4"></div>
+                            <h3 class="product-name">Nước Ép Cần Tây</h3>
+                            <p class="product-price">40.000đ / chai</p>
+                            <button class="add-to-cart-btn">Mua ngay</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Giới thiệu</h3>
+                <p>F5 Fruit Shop là thương hiệu nhập khẩu trái cây uy tín hàng đầu Việt Nam với hơn 11 năm trên thị trường.</p>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#128205;</span>
+                    Số 2 Cổ Linh, Long Biên, Hà Nội
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Liên kết</h3>
+                <nav class="footer-links" aria-label="Liên kết footer">
+                    <a href="trangchu.html">Trang chủ</a>
+                    <details class="footer-dropdown">
+                        <summary>Sản phẩm</summary>
+                        <div class="footer-dropdown-menu">
+                            <a href="sinhto.html">Sinh tố</a>
+                            <a href="nuocep.html">Nước ép</a>
+                            <a href="thucpham.html">Thực phẩm</a>
+                            <a href="traicaynhap.html">Trái cây nhập</a>
+                        </div>
+                    </details>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Liên hệ</a>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h3>Chăm sóc khách hàng</h3>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#9742;</span>
+                    091 858 24 88
+                </p>
+                <p class="footer-info">
+                    <span aria-hidden="true">&#9993;</span>
+                    f5fruitshopcop@gmail.com
+                </p>
+                <div class="social-block">
+                    <h4>Mạng xã hội</h4>
+                    <div class="social-icons" aria-label="Mạng xã hội">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Zalo">Z</a>
+                        <a href="#" aria-label="YouTube">&#9654;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <img src="/image/logo.png" alt="Logo F5 Fruit Shop">
+            <p>© Copyright 2026 By Nhom 8. Powered by Nhom 8</p>
+        </div>
+    </footer>
+
+    <script src="/index.js"></script>
+</body>
+</html>

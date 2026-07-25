@@ -1,0 +1,1166 @@
+/* =========================================
+   1. BIẾN CƠ SỞ (VARIABLES)
+========================================= */
+:root {
+    --primary-color: #53a716;       /* Xanh lá chủ đạo */
+    --primary-hover: #2f8f46;       /* Xanh lá đậm khi hover */
+    --text-main: #1f2a24;           /* Màu chữ cơ bản */
+    --text-nav: #25352c;            /* Màu chữ tiêu đề/menu */
+    --text-gray: #4a5b50;           /* Màu chữ phụ/mô tả */
+    --bg-light: #f5f8f3;            /* Màu nền xám nhạt */
+    --white: #ffffff;
+    --border-color: #d9e2d6;
+    --font-main: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   2. RESET & CẤU TRÚC CHUNG (GLOBAL)
+========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-main);
+    background: var(--white);
+    font-family: var(--font-main);
+}
+
+/* Khung bọc toàn bộ phần thân (chứa banner full width và nội dung) */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Khu vực nội dung bài viết/sản phẩm thụt lề 8% */
+.page-content {
+    padding: 40px 8%;
+}
+
+/* =========================================
+   3. HEADER TỔNG THỂ
+========================================= */
+.site-header {
+    width: 100%;
+    background: var(--white);
+}
+
+.site-header.main-fixed {
+    padding-bottom: 52px;
+}
+
+.site-header.main-fixed .header-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* --- Header Top --- */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 36px;
+    padding: 0 2%;
+    color: var(--white);
+    background: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.header-top p {
+    margin: 0;
+}
+
+.brand-text {
+    flex: 1;
+    text-align: center;
+}
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.auth-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header Main --- */
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    height: 60px;
+    padding: 0 0 0 2px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    
+    /* THÊM 2 DÒNG NÀY ĐỂ ÉP MENU NỔI LÊN TRÊN BANNER */
+    position: relative; 
+    z-index: 9999; 
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 180px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    max-width: 176px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* =========================================
+   4. NAVIGATION & MENU BẬT XUỐNG
+========================================= */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 12px;
+}
+
+.main-nav a,
+.nav-dropdown-toggle {
+    color: var(--text-nav);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-nav a {
+    padding: 7px 10px;
+    white-space: nowrap;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 10px;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.main-nav a:hover,
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
+    color: var(--primary-hover);
+}
+
+.nav-dropdown-toggle span {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown.is-open .nav-dropdown-toggle span {
+    transform: rotate(180deg);
+}
+
+/* Menu Dropdown con */
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 1001;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    padding: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--white);
+    box-shadow: 0 10px 24px rgba(31, 42, 36, 0.16);
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-dropdown-menu a {
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: normal;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+    color: var(--white);
+    background: var(--primary-hover);
+}
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* =========================================
+   5. CÔNG CỤ TÌM KIẾM & NÚT BẤM HEADER
+========================================= */
+.header-actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.header-actions button,
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    color: var(--primary-color);
+    background: transparent;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-actions button:hover,
+.action-link:hover {
+    color: var(--white);
+    background: var(--primary-hover);
+}
+
+.header-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 4px 0;
+    background: var(--text-nav);
+}
+
+.search-input {
+    position: absolute;
+    top: 48px;
+    right: 90px;
+    z-index: 10;
+    width: 190px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid var(--border-color);
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--text-nav);
+    background: var(--bg-light);
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(31, 42, 36, 0.12);
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-actions.search-open .search-input {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* =========================================
+   6. BANNER SLIDER (TỈ LỆ 3:1)
+========================================= */
+.home-banner {
+    position: relative;
+    width: calc(100% - 16%); /* Thụt lề 2 bên thẳng hàng với nội dung */
+    margin: 30px auto 40px auto; /* Cách trên 30px, cách dưới 40px, căn giữa */
+    border-radius: 16px; /* Bo góc tròn 16px */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Đổ bóng nổi khối */
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    background: var(--bg-light);
+}
+.banner-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.banner-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Nút điều hướng trái/phải */
+.banner-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.banner-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 24px;
+}
+
+.next-btn {
+    right: 24px;
+}
+
+/* =========================================
+   7. FOOTER
+========================================= */
+.site-footer {
+    margin-top: auto;
+    background: var(--white);
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 26px 8%;
+    background: var(--bg-light);
+}
+
+.footer-column h3 {
+    margin: 0;
+    color: var(--text-nav);
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-column p {
+    margin: 12px 0 0;
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-info span {
+    color: var(--primary-color);
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-dropdown {
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-dropdown summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+}
+
+.footer-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.footer-dropdown summary::after {
+    content: "+";
+    margin-left: 8px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.footer-dropdown[open] summary::after {
+    content: "−";
+}
+
+.footer-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0 2px 14px;
+}
+
+.footer-dropdown-menu a {
+    display: block;
+}
+
+.social-block {
+    margin-top: 18px;
+}
+
+.social-block h4 {
+    margin: 0 0 10px;
+    color: var(--text-nav);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--text-nav);
+    color: var(--text-nav);
+    background: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.social-icons a:hover {
+    color: var(--white);
+    background: var(--text-nav);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 64px;
+    padding: 10px 8%;
+    color: var(--text-nav);
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-bottom img {
+    display: block;
+    width: auto;
+    height: 44px;
+    object-fit: contain;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+}
+
+/* =========================================
+   7.5. KHU VỰC 4 ẢNH DÀN NGANG (FULL WIDTH)
+========================================= */
+.feature-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px; /* TẠO KHOẢNG CÁCH: Thêm khoảng hở 24px giữa các ảnh */
+    width: calc(100% - 16%); 
+    margin: 0 auto 40px auto; 
+    /* Đã gỡ bỏ bo góc ở thẻ cha để chuyển xuống thẻ con */
+}
+
+.feature-item {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    position: relative;
+    
+    /* CHUYỂN XUỐNG ĐÂY: Bo góc và đổ bóng cho từng bức ảnh riêng biệt */
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.feature-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.4s ease; 
+}
+
+.feature-item:hover img {
+    transform: scale(1.08); 
+}
+
+/* =========================================
+   7.6. THANH CHÍNH SÁCH (CHỮ CHẠY LIÊN TỤC)
+========================================= */
+.policy-bar {
+    width: calc(100% - 16%); /* Thụt lề đồng bộ */
+    margin: 0 auto 10px auto; /* Cách phần dưới (chỗ chữ Best Seller) 50px */
+    border-radius: 16px; /* Bo góc */
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 14px 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(83, 167, 22, 0.2); /* Đổ bóng màu xanh lá */
+}
+
+.policy-track {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa các dòng chữ */
+    white-space: nowrap; /* Ép chữ nằm trên 1 hàng ngang */
+    width: max-content;
+    
+    /* Cài đặt hiệu ứng chạy ngang: Chạy hết vòng trong 20 giây */
+    animation: scrollTicker 20s linear infinite; 
+}
+
+/* Tạm dừng chạy khi người dùng rê chuột vào để dễ đọc */
+.policy-bar:hover .policy-track {
+    animation-play-state: paused;
+}
+
+.policy-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Định dạng dấu tick của FontAwesome */
+.policy-item i {
+    font-size: 18px;
+    color: #ffffff; 
+}
+
+/* Chìa khóa của vòng lặp: Trượt đúng 50% chiều rộng rồi giật lại 0% (người xem sẽ không nhận ra) */
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =========================================
+   9. KHU VỰC SẢN PHẨM NỔI BẬT
+========================================= */
+.featured-section {
+    margin: 40px 0;
+    width: 100%;
+}
+
+/* Tiêu đề với gạch chân màu xanh */
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-nav);
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Khu vực thanh trượt sản phẩm */
+.product-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    
+    /* BỎ DÒNG NÀY ĐỂ KÉO TỰ DO: scroll-snap-type: x mandatory; */
+    scroll-behavior: smooth;
+    padding-bottom: 15px; 
+    
+    cursor: grab;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+.product-track::-webkit-scrollbar {
+    display: none; 
+}
+.product-track:active {
+    cursor: grabbing; 
+}
+
+/* Thẻ sản phẩm con */
+.product-card {
+    flex: 0 0 calc((100% - 60px) / 4); 
+    
+    /* BỎ DÒNG NÀY ĐỂ KÉO TỰ DO: scroll-snap-align: start; */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    
+    position: relative;
+    overflow: hidden; 
+    aspect-ratio: 1 / 1; 
+    transition: box-shadow 0.3s ease;
+    user-select: none;
+}
+
+/* Thẻ sản phẩm con (Chỉ chứa hình vuông) */
+.product-card {
+    flex: 0 0 calc((100% - 60px) / 4); 
+    scroll-snap-align: start;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    
+    /* Thiết lập khung cố định thành hình vuông và che đi phần thừa */
+    position: relative;
+    overflow: hidden; 
+    aspect-ratio: 1 / 1; 
+    
+    transition: box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Định dạng Ảnh (Tràn viền 100%) */
+.product-image-only {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.5s ease; /* Hiệu ứng zoom nhẹ ảnh */
+}
+
+/* Rê chuột vào ảnh sẽ phóng to nhẹ */
+.product-card:hover .product-image-only {
+    transform: scale(1.1);
+}
+
+/* ====================================
+   LỚP PHỦ THÔNG TIN (ẨN ĐI MẶC ĐỊNH)
+==================================== */
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.93); /* Nền trắng hơi trong suốt */
+    backdrop-filter: blur(4px); /* Làm mờ ảnh phía sau nền */
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Trượt lớp thông tin xuống dưới đáy để giấu đi (100% chiều cao của nó) */
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Khi rê chuột vào thẻ Card, lớp thông tin trượt lên */
+.product-card:hover .product-info {
+    transform: translateY(0);
+}
+
+.product-name {
+    font-size: 16px;
+    color: var(--text-nav);
+    margin: 0 0 4px;
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #e53935;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--primary-hover);
+}
+
+/* =========================================
+   10. KHU VỰC BEST SELLER & BANNER PHỤ
+========================================= */
+/* Banner phụ ở giữa trang (Tỉ lệ 4:1 để trông gọn gàng hơn 80% so với Banner chính) */
+.sub-banner {
+    width: 100%;
+    aspect-ratio: 4 / 1; 
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.sub-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Thẻ sản phẩm hiển thị thông tin tĩnh (Không cần hover) */
+.product-card-static {
+    flex: 0 0 calc((100% - 60px) / 4); 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    height: auto;
+    min-height: 100%;
+}
+
+.product-card-static:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-static .product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.product-card-static .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.product-card-static:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-card-static .add-to-cart-btn {
+    margin-top: auto; 
+}
+
+/* =========================================
+   11. KHU VỰC CÁC SẢN PHẨM (TABS & LƯỚI GRID)
+========================================= */
+/* Menu lọc sản phẩm (Tabs) */
+.product-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Cho phép rớt dòng nếu màn hình nhỏ */
+}
+
+.tab-btn {
+    padding: 8px 24px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--text-nav);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(83, 167, 22, 0.3);
+}
+
+/* Bố cục 2 cột (Trái 25% - Phải 75%) */
+.all-products-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Trái cố định 260px, Phải chiếm phần còn lại */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cột Trái (Quảng cáo) */
+.left-ads {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky; 
+    top: 80px; /* Giữ quảng cáo trượt theo màn hình khi người dùng lướt xuống */
+}
+
+.ad-banner-vertical {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5; /* Tỉ lệ chuẩn cho ảnh dọc (VD: ngang 400px - cao 500px) */
+}
+
+.ad-banner-vertical img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.ad-banner-vertical:hover img {
+    transform: scale(1.05);
+}
+
+/* Cột Phải (Lưới 8 Sản phẩm) */
+.right-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 sản phẩm 1 hàng ngang */
+    gap: 20px;
+}
+
+/* Gỡ bỏ thuộc tính flex của product-card-static khi nằm trong Grid để thẻ bung đều */
+.right-product-grid .product-card-static {
+    flex: unset; 
+}
+
+/* =========================================
+   8. RESPONSIVE QUERIES
+========================================= */
+@media (min-width: 801px) {
+    .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle span {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .hotline { display: none; }
+    .brand-text {
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+        font-size: 15px;
+    }
+    .header-top {
+        gap: 10px;
+        padding: 0 2% 0 4%;
+    }
+    .opening-hours {
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 auto;
+        gap: 4px;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+    .opening-hours .header-icon {
+        width: 18px;
+        height: 18px;
+    }
+    .header-main {
+        position: relative; 
+        display: grid;
+        grid-template-columns: minmax(48px, 1fr) auto minmax(120px, 1fr);
+        align-items: center;
+        gap: 0;
+    }
+    .menu-toggle {
+        display: inline-block;
+        justify-self: start;
+    }
+    .logo {
+        justify-self: center;
+    }
+    .main-nav {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0; 
+        z-index: 1001;
+        display: flex;
+        visibility: hidden;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        opacity: 0;
+        pointer-events: none;
+        background: var(--white); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-15px); 
+        transition: all 0.3s ease;
+    }
+    .main-nav.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    .main-nav > a,
+    .nav-dropdown-toggle {
+        width: 100%;
+        padding: 14px 24px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0; 
+    }
+    .nav-dropdown { width: 100%; }
+    .nav-dropdown-toggle {
+        justify-content: space-between;
+        border-bottom: none;
+    }
+    .nav-dropdown-menu {
+        position: static;
+        width: 100%;
+        max-height: 0; 
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        transform: none;
+        background: #f9f9f9; 
+        transition: max-height 0.3s ease;
+    }
+    .nav-dropdown.is-open .nav-dropdown-menu {
+        max-height: 250px; 
+    }
+    .nav-dropdown.is-open .nav-dropdown-toggle {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .nav-dropdown-menu a {
+        padding: 12px 40px; 
+        border-bottom: 1px solid #eeeeee;
+    }
+    .header-actions {
+        justify-self: end;
+    }
+
+    .feature-images {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: Rớt xuống 2 hàng, mỗi hàng 2 ảnh */
+    }
+
+    /* Trong khu vực màn hình nhỏ, hiển thị 2 sản phẩm */
+    .product-card {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+    .product-card-static { flex: 0 0 calc((100% - 20px) / 2); }
+
+/* Trên màn hình nhỏ: Đưa quảng cáo lên trên, sản phẩm xuống dưới */
+    .all-products-layout {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Quảng cáo xếp hàng ngang 2 cột thay vì dọc */
+    .left-ads {
+        flex-direction: row;
+        position: static;
+    }
+    
+    /* Sản phẩm rớt xuống còn 2 cột */
+    .right-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================================
+   12. HIỆU ỨNG LỌC SẢN PHẨM (FILTER)
+========================================= */
+/* Class dùng để giấu sản phẩm không khớp (Được thêm/xóa bằng JS) */
+.hide-product {
+    display: none !important;
+}
+
+/* Thêm hiệu ứng trượt nhẹ và mờ dần khi sản phẩm hiện ra */
+.right-product-grid .product-card-static {
+    animation: fadeZoomIn 0.4s ease forwards;
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-links { display: none; }
+    .header-top {
+        height: 36px;
+        padding: 0;
+    }
+    .brand-text { width: auto; }
+    .header-main {
+        grid-template-columns: 40px minmax(88px, 1fr) minmax(104px, auto);
+        height: 52px;
+        padding: 6px 0;
+    }
+    .menu-toggle {
+        width: 34px;
+        height: 34px;
+        padding: 6px;
+    }
+    .menu-toggle span { width: 22px; }
+    .logo {
+        flex-basis: auto;
+        padding: 0;
+    }
+    .logo img {
+        max-width: 104px;
+        height: 40px;
+    }
+    .header-actions { gap: 2px; }
+    .header-actions button,
+    .action-link {
+        width: 32px;
+        height: 36px;
+        font-size: 20px;
+    }
+    .header-actions.search-open .search-input {
+        right: 0;
+        width: min(180px, 90vw);
+    }
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .footer-bottom { text-align: center; }
+    
+    /* Thu nhỏ nút bấm banner trên điện thoại */
+    .banner-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+}
