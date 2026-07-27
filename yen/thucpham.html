@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="stylesheet" href="trangchu.css">
-    <link rel="stylesheet"href="sinhto.css">
+    <link rel="stylesheet"href="trang.css">
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -68,8 +68,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         <span>></span>
         <span>Thực phẩm</span>
     </section>
-    <section class="juice-title">
+    <section class="product-title">
+        <span class="leaf">🍃</span>
         <h1>THỰC PHẨM TRÁI CÂY</h1>
+        <span class="leaf">🍃</span>
     </section>
     <section class="sort-bar">
         <div class="product-count">
@@ -88,59 +90,71 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     </section>
     <section class="product-list" id="productList">
         <div class="product-card">
-            <img src="mutdau.png">
-            <h3>Mứt dâu</h3>
-            <p class="price">75.000đ</p>
-            <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
+    <a class="product-detail-link" href="tp-mutdau.html">
+        <img src="mutdau.png">
+        <h3>Mứt dâu</h3>
+        <p class="price">75.000đ</p>
+    </a>
+   <button class="buy-btn" onclick="window.location.href='tp-mutdau.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
+         <div class="product-card">
+    <a class="product-detail-link" href="tp-mutvietquoc.html">
+        <img src="mutvietquoc.png">
+        <h3>Mứt việt quốc</h3>
+        <p class="price">85.000đ</p>
+    </a>
+       <button class="buy-btn" onclick="window.location.href='tp-mutvietquoc.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
+         <div class="product-card">
+    <a class="product-detail-link" href="tp-xoaideo.html">
+        <img src="xoaideo.png">
+        <h3>Xoài sấy dẻoc</h3>
+        <p class="price">50.000đ</p>
+    </a>
+   <button class="buy-btn" onclick="window.location.href='tp-xoaideo.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
         <div class="product-card">
-            <img src="mutvietquoc.png">
-            <h3>Mứt việt quốc</h3>
-            <p class="price">85.000đ</p>
-               <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
+    <a class="product-detail-link" href="tp-mitsay.html">
+        <img src="mitsay.png">
+        <h3>Mít sấy giòn</h3>
+        <p class="price">45.000đ</p>
+    </a>
+   <button class="buy-btn" onclick="window.location.href='tp-mitsay.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
+       <div class="product-card">
+    <a class="product-detail-link" href="tp-hatdieu.html">
+        <img src="hatdieu.png">
+        <h3>Hạt điều rang muối</h3>
+        <p class="price">70.000đ</p>
+    </a>
+       <button class="buy-btn" onclick="window.location.href='tp-hatdieu.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
         <div class="product-card">
-            <img src="xoaideo.png">
-            <h3>Xoài sấy dẻo</h3>
-            <p class="price">50.000đ</p>
-              <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
-        <div class="product-card">
-            <img src="mitsay.png">
-            <h3>Mít sấy giòn</h3>
-            <p class="price">45.000đ</p>
-              <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
-        <div class="product-card">
-            <img src="hatdieu.png">
-            <h3>Hạt điều rang muối</h3>
-            <p class="price">70.000đ</p>
-               <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
-        <div class="product-card">
-           <img src="matong.png">
-            <h3>Mật ong</h3>
-            <p class="price">120.000đ</p>
-             <button class="buy-btn">
-    <span class="cart-icon">🛍</span>
-    <span>CHỌN MUA</span>
-</button>
-        </div>
+    <a class="product-detail-link" href="tp-matong.html">
+        <img src="matong.png">
+        <h3>Mật ong</h3>
+        <p class="price">120.000đ</p>
+    </a>
+   <button class="buy-btn" onclick="window.location.href='tp-matong.html'">
+        <span class="cart-icon">🛍</span>
+        <span>MUA NGAY</span>
+    </button>
+</div>
     </section>
 </main>
 
