@@ -675,169 +675,82 @@ select {
 }
 
 /* ----- RESPONSIVE ----- */
-/* Tablet ( < 1024px ) */
-@media (max-width: 1023px) {
+/* Tablet 600 - 800px */
+@media (max-width: 800px) {
+  :root {
+    --pad-page: 24px;
+    --gap-section: 48px;
+  }
+ 
+  /* Màn không đủ rộng để đặt gallery + nội dung cạnh nhau
+     -> rút GC 2 cột về lại FC 1 cột (ảnh trước, thông tin sau). */
   .product-detail {
+    display: flex; /* FC (ghi đè GC của desktop) */
+    flex-direction: column;
+    gap: 24px;
     padding: 28px;
   }
-
-  .product-addition {
-    grid-template-columns: repeat(2, 1fr); /* GC 3 cột -> 2 cột */
+  .product-gallery {
+    position: static; /* Huỷ sticky, vì gallery không còn đứng riêng 1 cột */
+    top: auto;
   }
-
+ 
+  /* 3 thẻ info thu còn 2 cột (chưa cần dồn hết về 1 cột như mobile) */
+  .product-addition {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+ 
   .related-products__list {
     grid-auto-columns: 230px;
   }
-
-  .scroll-btn {
-    display: none; /* Ẩn nút cuộn -> vuốt bằng tay */
-  }
+ 
 }
-
-/* Mobile ( < 768px ) */
-@media (max-width: 767px) {
+ 
+/* Mobile: < 600px */
+@media (max-width: 600px) {
   :root {
     --pad-page: 16px;
     --gap-section: 32px;
   }
-
+ 
   .product-detail {
-    display: flex; /* FC cột dọc thay vì GC */
-    flex-direction: column;
-    gap: 24px;
     padding: 20px;
+    border-radius: var(--radius-m);
   }
-
-  .product-gallery {
-    position: static; /* Bỏ sticky vì không còn 2 cột song song */
-    top: auto;
-  }
-
+ 
+  /* Màn hẹp: mỗi khối option chiếm full width cho dễ chạm tay */
   .product-option {
-    flex-direction: column; /* FC cột dọc */
+    flex-direction: column;
+    align-items: stretch;
     gap: 16px;
   }
   .size-selector select {
     width: 100%;
   }
-
+ 
+  /* 2 nút hành động xếp chồng full-width thay vì cạnh nhau */
   .product-action {
-    flex-direction: column; /* FC cột dọc */
+    flex-direction: column;
   }
-
+  .add-to-cart,
+  .buy-now {
+    min-width: 0;
+  }
+ 
+  /* 3 thẻ info dồn về 1 cột duy nhất */
   .product-addition {
-    display: flex; /* Bỏ grid, xếp cột dọc */
+    display: flex; /* FC (ghi đè GC của tablet/desktop) */
     flex-direction: column;
     gap: 16px;
   }
-
+ 
   .related-products__list {
     grid-auto-columns: 210px;
   }
-}
-@media (min-width: 960px) {
-  .product-addition {
-    grid-template-columns: repeat(3, 1fr); /* GC 3 cột */
-  }
-
-  .related-products__list {
-    grid-auto-columns: 250px;
-  }
-
-  /* Đủ rộng để hiện nút cuộn trái/phải cạnh khối sản phẩm liên quan */
+ 
+  /* Màn nhỏ ưu tiên vuốt tay, ẩn 2 nút cuộn để đỡ che nội dung */
   .scroll-btn {
-    display: grid; /* GC 1 ô, dùng place-items để căn icon giữa nút tròn */
-  }
-}
-
-/* Small Mobile ( < 481px ) */
-@media (max-width: 480px) {
-  :root {
-    --pad-page: 12px;
-    --gap-section: 24px;
-  }
-
-  .page-content {
-    padding: 12px var(--pad-page) 40px;
-  }
-
-  .product-detail {
-    padding: 14px;
-    gap: 18px;
-    border-radius: var(--radius-s);
-  }
-
-  .thumb {
-    width: 52px;
-    height: 52px;
-  }
-
-  .product-title {
-    font-size: clamp(1.25rem, 6vw, 1.6rem);
-  }
-  .product-price {
-    font-size: 1.5rem;
-    gap: 8px;
-  }
-  .product-desc {
-    font-size: 0.88rem;
-  }
-
-  .product-view,
-  .product-sell {
-    font-size: 0.76rem;
-    padding: 6px 10px;
-  }
-
-  .quantity-control button {
-    width: 34px;
-    height: 34px;
-    font-size: 1rem;
-  }
-  .qty-value {
-    min-width: 36px;
-  }
-
-  .add-to-cart,
-  .buy-now {
-    padding: 12px 16px;
-    font-size: 0.92rem;
-  }
-
-  .info-card {
-    padding: 16px;
-  }
-  .rating__score {
-    font-size: 1.8rem;
-  }
-
-  .related-products__list {
-    grid-auto-columns: 168px;
-    gap: 12px;
-  }
-  .card__body {
-    padding: 10px;
-    gap: 6px;
-  }
-  .card__body h3 {
-    font-size: 0.85rem;
-  }
-  .card__desc {
-    font-size: 0.72rem;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-  }
-  .card__price {
-    font-size: 0.9rem;
-  }
-  .btn-add {
-    padding: 6px 10px;
-    font-size: 0.74rem;
-  }
-
-  .toast-notification {
-    font-size: 0.82rem;
-    padding: 10px 16px;
-    bottom: 16px;
+    display: none;
   }
 }
