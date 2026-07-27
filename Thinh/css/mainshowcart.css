@@ -179,7 +179,7 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
 
     /* Ẩn hàng tiêu đề cột trên điện thoại */
@@ -221,7 +221,6 @@ body {
         height: 90px;
     }
 
-    /* Các cột thông tin chiếm toàn bộ chiều ngang */
     .item-unit-price,
     .item-name,
     .item-quantity,
@@ -251,7 +250,7 @@ body {
         color: #333;
     }
 
-    /* Nút xóa chiếm toàn bộ chiều ngang */
+    /* Nút xóa  */
     .delete-item {
         text-align: center;
         padding: 8px;
