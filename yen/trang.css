@@ -53,10 +53,14 @@
     width:90%;
     margin:25px auto;
     padding:14px 18px;
+
     border:1px solid #d8e6d8;
     border-radius:12px;
+
     background:#f7fbf6;
+
     font-size:18px;
+
     box-shadow:0 4px 12px rgba(0,0,0,0.06);
 }
 
@@ -96,19 +100,25 @@
     width:90%;
     margin:25px auto;
     padding:18px 24px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:20px;
+
     border:1px solid #dfe8dc;
     border-radius:16px;
+
     background:#fffdf7;
+
     box-shadow:0 5px 14px rgba(0,0,0,0.08);
 }
 
 .product-count{
     margin:0;
+
     color:#2e7d32;
+
     font-size:18px;
     font-weight:bold;
 }
@@ -129,9 +139,12 @@
     min-width:210px;
     height:42px;
     padding:0 12px;
+
     border:1px solid #b9cdb7;
     border-radius:10px;
+
     background:#ffffff;
+
     font-size:16px;
     cursor:pointer;
 }
@@ -191,13 +204,18 @@
 .product-card button{
     width:100%;
     height:50px;
+
     margin-top:auto;
+
     border:none;
     border-radius:28px;
+
     background:#24b943;
     color:#ffffff;
+
     font-size:16px;
     font-weight:bold;
+
     cursor:pointer;
     transition:0.3s;
 }
@@ -247,7 +265,9 @@
 
 
 .sort-bar{
+
 flex-direction:column;
+
 gap:15px;
 
 }
@@ -255,12 +275,16 @@ gap:15px;
     width:90%;
     margin:30px auto;
     padding:18px 25px;
+
     display:flex;
     justify-content:center;
     align-items:center;
     gap:20px;
+
     background:linear-gradient(90deg,#a7e28c,#76bc97);
+
     border-radius:50px;
+
     box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
 
