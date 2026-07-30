@@ -110,14 +110,6 @@ select {
   font-weight: 700;
 }
 
-/* ============================================================
-   PRODUCT-DETAIL (khối gallery + thông tin sản phẩm)
-   Mobile: FC trục dọc (ảnh trước, thông tin sau — đúng thứ tự đọc).
-   Từ 768px trở lên: chuyển thành GC (CSS Grid) 2 cột, vì lúc này
-   màn hình đủ rộng để đặt ảnh và thông tin cạnh nhau.
-   .product-detail cũng là CB cho .sale-badge (positioned) bên trong
-   gallery và là CB layout cho 2 khối con.
-   ============================================================ */
 /* ----- SECTION.product-detail */
 .product-detail {
   display: grid; /* GC 2 cột */
@@ -367,30 +359,21 @@ select {
 
 /* Thanh thông báo success khi người dùng ấn thêm vào giỏ hàng */
 .toast-notification {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  z-index: 999;
-  padding: 12px 20px;
-  border-radius: var(--radius-m);
-  background: var(--green-dark);
-  color: var(--white);
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: var(--shadow-hover);
-  opacity: 0;
-  transform: translate(-50%, 12px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-  pointer-events: none;
-  max-width: calc(100% - 32px);
-  text-align: center;
-}
-/* Dùng js bắt event khi người dùng thao tác */
-.toast-notification--show {
-  opacity: 1;
-  transform: translate(-50%, 0);
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 12px 20px;
+    border-radius: var(--radius-m);
+    background: var(--green-dark);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-hover);
+    pointer-events: none;
+    max-width: calc(100% - 32px);
+    text-align: center;
 }
 
 /* ----- SECTION.product-addition */
@@ -628,7 +611,7 @@ select {
   font-weight: 800;
   color: var(--green-dark);
 }
-.btn-add {
+.btn-view {
   position: relative; /* CB */
   z-index: 2; /* z-index cao hơn .card__link::after để vẫn bấm được */
   background: var(--green-mid);
@@ -639,7 +622,7 @@ select {
   font-weight: 700;
   transition: background-color 0.2s ease;
 }
-.btn-add:hover {
+.btn-view:hover {
   background: var(--green-dark);
 }
 
