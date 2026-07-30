@@ -18,9 +18,6 @@
   --text-light: var(--gray-500);
   --border: var(--gray-300);
 
-  --font-display: "Pacifico", cursive;
-  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-
   --radius-s: 8px;
   --radius-m: 16px;
   --radius-l: 24px;
@@ -71,7 +68,7 @@ select {
 .page-content {
   display: flex; /* FC cột dọc*/
   flex-direction: column;
-  flex: 1 0 auto; /* nở hết phần không gian còn lại -> đẩy footer xuống đáy */
+  flex: 1 0 auto;
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -88,7 +85,7 @@ select {
 
 .breadcrumb__list {
   display: flex;
-  flex-wrap: wrap; /* Cho phép các breadcrumb__item xuống dòng khi tràn viền màn hình */
+  flex-wrap: wrap;
   gap: 6px;
   font-size: 0.82rem;
   color: var(--text-light);
@@ -127,12 +124,12 @@ select {
   display: flex; /* FC cột dọc */
   flex-direction: column;
   gap: 12px;
-  position: sticky; /* Desktop: dính theo khi cuộn trang */
+  position: sticky;
   top: 24px;
 }
 
 .main-image-wrapper {
-  position: relative; /* CB cho .sale-badge*/
+  position: relative; /* CB */
   overflow: hidden;
   border-radius: var(--radius-m);
   border: 2px solid var(--border);
@@ -583,7 +580,7 @@ select {
 }
 .card__link::after {
   content: "";
-  position: absolute; /* neo theo .product-card — "stretched link" */
+  position: absolute; /* Bám vào neo .product-card — "stretched link" */
   inset: 0;
   z-index: 1;
 }
@@ -613,7 +610,7 @@ select {
 }
 .btn-view {
   position: relative; /* CB */
-  z-index: 2; /* z-index cao hơn .card__link::after để vẫn bấm được */
+  z-index: 2;
   background: var(--green-mid);
   color: var(--white);
   border-radius: var(--radius-s);
@@ -627,7 +624,7 @@ select {
 }
 
 .scroll-btn {
-  display: grid; /* Mobile-first: ẩn mặc định, vì màn nhỏ dùng vuốt tay là chính */
+  display: grid;
   place-items: center;
   position: absolute; /* Bám vào neo .related-products__wrap */
   top: 50%;
@@ -657,28 +654,25 @@ select {
   right: -8px;
 }
 
-/* ----- RESPONSIVE ----- */
+/* ----- RWD ----- */
 /* Tablet 600 - 800px */
 @media (max-width: 800px) {
   :root {
     --pad-page: 24px;
     --gap-section: 48px;
   }
- 
-  /* Màn không đủ rộng để đặt gallery + nội dung cạnh nhau
-     -> rút GC 2 cột về lại FC 1 cột (ảnh trước, thông tin sau). */
+
   .product-detail {
-    display: flex; /* FC (ghi đè GC của desktop) */
+    display: flex;
     flex-direction: column;
     gap: 24px;
     padding: 28px;
   }
   .product-gallery {
-    position: static; /* Huỷ sticky, vì gallery không còn đứng riêng 1 cột */
+    position: static;
     top: auto;
   }
  
-  /* 3 thẻ info thu còn 2 cột (chưa cần dồn hết về 1 cột như mobile) */
   .product-addition {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -701,8 +695,7 @@ select {
     padding: 20px;
     border-radius: var(--radius-m);
   }
- 
-  /* Màn hẹp: mỗi khối option chiếm full width cho dễ chạm tay */
+
   .product-option {
     flex-direction: column;
     align-items: stretch;
@@ -712,7 +705,6 @@ select {
     width: 100%;
   }
  
-  /* 2 nút hành động xếp chồng full-width thay vì cạnh nhau */
   .product-action {
     flex-direction: column;
   }
@@ -721,9 +713,8 @@ select {
     min-width: 0;
   }
  
-  /* 3 thẻ info dồn về 1 cột duy nhất */
   .product-addition {
-    display: flex; /* FC (ghi đè GC của tablet/desktop) */
+    display: flex;
     flex-direction: column;
     gap: 16px;
   }
@@ -732,7 +723,6 @@ select {
     grid-auto-columns: 210px;
   }
  
-  /* Màn nhỏ ưu tiên vuốt tay, ẩn 2 nút cuộn để đỡ che nội dung */
   .scroll-btn {
     display: none;
   }
